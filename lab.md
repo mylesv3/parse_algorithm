@@ -26,17 +26,6 @@ print(import_file)
 print(remove_list)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
-
-To display the contents of a variable, pass it as an argument to the `print()` function.
-
-</details>
-
-#### **Question 1**
-**What do you observe about the output above?**
-
-
 The first line of the output shows the name of the text file. The second line of the output shows the list of IP addresses from the `remove_list`. 
 
 ## Task 2
