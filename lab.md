@@ -82,12 +82,6 @@ print(ip_addresses)
 
 
 
-#### **Question 2**
-**Do you notice any IP addresses in the allow list that are also in the `remove_list`?**
-
-
-There are four IP addresses in the allow list that are also in the `remove_list`.
-
 ## Task 4
 After reading the file, reassign the `ip_addresses` variable so its data type is updated from a string to a list. Use the `.split()` method to achieve this. Adding this step will allow you to iterate through each of the IP addresses in the allow list instead of navigating a large string that contains all the addresses merged together. 
 
@@ -404,31 +398,7 @@ def update_file(import_file, remove_list):
         file.write(ip_addresses)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-The function definition begins with the `def` keyword.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-After the `def` keyword, specify the name of the function, followed by parantheses and a colon. Inside the parantheses, specify the parameters that the function takes in.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 3</strong></h4></summary>
-
-After the `def` keyword, write `update_file(import_file, remove_list):` to complete the function definition header.
-
-</details>
-
-#### **Question 3**
-**What are the benefits of incorporating the algorithm into a single function?**
-
-Incorporating the algorithm into a single function helps organize the code and make it reusable. If you want to execute the algorithm more than once, all you have to do is call the function that contains it.
 
 ## Task 10
 Finally, call the `update_file()` that you defined. Apply the function to `"allow_list.txt"` and pass in a list of IP addresses as the second argument.
