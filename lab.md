@@ -48,23 +48,14 @@ remove_list = ["192.168.97.225", "192.168.158.170", "192.168.201.40", "192.168.5
 with open(import_file, "r") as file:
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-The `open()` function in Python allows you to open a file. 
-
-As the first parameter, it takes in the name of the file (or a variable containing the name of the file). As the second parameter, it takes in a string that indicates how the file should be handled.
-
-Pass in the letter `"r"` as the second parameter when you want to read the file.
-
-</details>
 
 ## Task 3
 Now, use the `.read()` method to read the imported file and store it in a variable named `ip_addresses`. 
 
 Afterwards, display `ip_addresses` to examine the data in its current format. 
 
-Be sure to replace each `### YOUR CODE HERE ###` with your own code before you run the following cell.
+
 
 
 ```python
@@ -89,26 +80,7 @@ with open(import_file, "r") as file:
 print(ip_addresses)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-The `.read()` method in Python allows you to read in a file.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-Call `file.read()` to read the imported file.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 3</strong></h4></summary>
-
-To display the contents of a variable, pass it as an argument to the `print()` function.
-
-</details>
 
 #### **Question 2**
 **Do you notice any IP addresses in the allow list that are also in the `remove_list`?**
@@ -121,7 +93,6 @@ After reading the file, reassign the `ip_addresses` variable so its data type is
 
 Afterwards, display the `ip_addresses` variable to verify that the update took place.
 
-Be sure to replace each `### YOUR CODE HERE ###` with your own code before you run the following cell.
 
 
 ```python
@@ -150,21 +121,12 @@ ip_addresses = ip_addresses.split()
 print(ip_addresses)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
 The `.split()` method in Python allows you to convert a string to a list. This method can take in a parameter that specifies which character to split on. If a parameter is not passed in, the method will split on whitespace by default. Note that whitespace includes any space between text on the same line and the space between one line and the next line.
 
 In this task, the default behavior of `.split()` works well. Each IP address is on a new line in the `allow_list.txt` file. In other words, there is whitespace between IP addresses in the text file. When you use `.split()`, it will separate the IP addresses and output them as a list.
 
-</details>
 
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-To display the contents of a variable, pass it as an argument to the `print()` function.
-
-</details>
 
 ## Task 5
 Now, you'll write code that removes the elements of `remove_list` from the `ip_addresses` list. This will require both an iterative statement and a conditional statement. 
@@ -205,24 +167,12 @@ for element in ip_addresses:
     print(element)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-Build a `for` loop to iterate through `ip_addresses`. Be sure to start with the `for` keyword. Use `element` as the loop variable and use `in` as the loop condition.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-To display the contents of a variable, pass it as an argument to the `print()` function.
-
-</details>
 
 ## Task 6
 Now, build a conditional statement to remove the elements of `remove_list` from the `ip_addresses` list. The conditional statement should be placed inside the iterative statement that loops through `ip_addresses`. In every iteration, if the current element in the `ip_addresses` list is in the `remove_list`, the `remove()` method should be used to remove that element. 
 
-Afterwards, display the updated `ip_addresses` list to verify that the elements of remove_list are no longer in the `ip_addresses`. Be sure to replace each `### YOUR CODE HERE ###` with your own code before you run the following cell.
+Afterwards, display the updated `ip_addresses` list to verify that the elements of remove_list are no longer in the `ip_addresses`. Be sure to replace each `### YOUR CODE 
 
 
 
@@ -268,26 +218,7 @@ for element in ip_addresses:
 print(ip_addresses)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-When building the conditional statement, use the `in` operator to check if `element` is in `remove_list`. 
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-To remove `element` from `ip_addresses`, call the `.remove()` method on `ip_addresses`, and pass in `element`.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 3</strong></h4></summary>
-
-To remove `element` from `ip_addresses`, call `ip_addresses.remove()` and pass in `element`.
-
-</details>
 
 ## Task 7
 The next step is to update the original file that was used to create the `ip_addresses` list. A line of code containing the `.join()` method has been added to the code so that the file can be updated. This is necessary because `ip_addresses` must be in string format when used inside the `with` statement to rewrite the file.
@@ -346,28 +277,7 @@ with open(import_file, "w") as file:
   file.write(ip_addresses)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-To complete the first line of the `with` statement, call the `open()` function and pass in the name of the file as the first parameter and the letter `"w"` as the second parameter. 
-
-The `"w"` parameter specifies that you're opening the file for the purpose of writing to it. 
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-Inside the `with` statement, call the `.write()` method to replace the contents of the file with the data stored in `ip_addresses`.
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 3</strong></h4></summary>
-
-Inside the `with` statement, call `file.write()` and pass in `ip_addresses`.
-
-</details>
 
 ## Task 8
 In this task, you'll verify that the original file was rewritten using the correct list. 
@@ -376,7 +286,6 @@ Write another `with` statement, this time to read in the updated file. Start by 
 
 Afterwards, display the `text` variable to examine the result.
 
-Be sure to replace each `### YOUR CODE HERE ###` with your own code before you run the following cell.
 
 
 ```python
@@ -440,36 +349,12 @@ with open(import_file, "r") as file:
 print(text)
 ```
 
-<details>
-  <summary><h4><strong>Hint 1</strong></h4></summary>
 
-To complete the first line of the `with` statement, call the `open()` function and pass in the name of the file as the first parameter and the letter `"r"` as the second parameter. 
-
-The `"r"` parameter specifies that you're opening the file for the purpose of reading it. 
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 2</strong></h4></summary>
-
-Inside the `with` statement, call the `.read()` method to read the contents of the file. Assign the `text` variable to the result. 
-
-</details>
-
-<details>
-  <summary><h4><strong>Hint 3</strong></h4></summary>
-
-To display the contents of a variable, pass it as an argument to the `print()` function.
-
-</details>
 
 ## Task 9
 The next step is to bring all of the code you've written leading up to this point and put it all into one function. 
 
 Define a function named `update_file()` that takes in two parameters. The first parameter is the name of the text file that contains IP addresses (call this parameter `import_file`). The second parameter is a list that contains IP addresses to be removed (call this parameter `remove_list`).
-
-Be sure to replace the `### YOUR CODE HERE ###` with your own code before you run the following cell. Note that this code cell will not produce an output.
-
 
 
 
@@ -554,7 +439,6 @@ Use the following list of IP addresses as the second argument:
 
 After the function call, use a `with` statement to read the contents of the allow list. Then display the contents of the allow list. Run it to verify that the file has been updated by the function.
 
-Be sure to replace the `### YOUR CODE HERE ###` with your own code before you run the following cell.
 
 
 ```python
